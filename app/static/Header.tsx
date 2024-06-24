@@ -1,16 +1,16 @@
 import Link from "next/link";
-import React from "react";
-import { MdCreate, MdHome, MdLock } from "react-icons/md";
+import React, { ReactNode } from "react";
+import { MdCreate, MdHome, MdLock, MdPerson } from "react-icons/md";
 
 interface iProps {
   id: number;
   name: string;
   url: string;
-  icon: "";
+  icon: ReactNode;
 }
 
 const Header = () => {
-  const nav = [
+  const nav: iProps[] = [
     {
       id: 1,
       name: "Home",
@@ -19,9 +19,15 @@ const Header = () => {
     },
     {
       id: 2,
-      name: "Lock",
+      name: "Secret",
       url: "/",
       icon: <MdLock />,
+    },
+    {
+      id: 2,
+      name: "Personal",
+      url: "/",
+      icon: <MdPerson />,
     },
     {
       id: 3,
@@ -43,22 +49,23 @@ const Header = () => {
               href={props.url}
               className="border rounded-md flex gap-2 px-4 py-2 items-center"
             >
-              <div>{props.name}</div>
               <div>{props.icon}</div>
+              <div>{props.name}</div>
             </Link>
           ))}
         </div>
         {user ? (
-          <div className="border rounded-sm flex gap-2 px-6 py-2 items-center">
+          <div className="border rounded-sm flex px-6 py-2 items-center">
             Log out
           </div>
         ) : (
           <Link
             href="/signIn"
-            className="border rounded-sm flex gap-2 px-6 py-2 items-center"
-          ></Link>
+            className="border rounded-sm flex px-6 py-2 items-center"
+          >
+            Log in
+          </Link>
         )}
-        <div>Log in</div>
       </div>
     </div>
   );

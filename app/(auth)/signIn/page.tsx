@@ -7,22 +7,13 @@ const page = () => {
   return (
     <div className="flex w-full h-screen justify-center items-center">
       <div className="border rounded-md w-[500px] min-h-[300px] p-4 ">
-        <div>Register Screen</div>
+        <div>Sign in Screen</div>
 
         <div className="my-10">
           <hr />
         </div>
 
         <form>
-          <div className="flex flex-col mb-4">
-            <label className="font-semibold text-[12px]">Display Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Display Name"
-              className="border outline-none h-[45px] rounded-md pl-2"
-            />
-          </div>
           <div className="flex flex-col mb-4">
             <label className="font-semibold text-[12px]">Email</label>
             <input
@@ -43,14 +34,14 @@ const page = () => {
           </div>
 
           <button className="w-full mt-8 h-[55px] flex items-center justify-center text-white bg-neutral-800 rounded-md">
-            Register
+            Sign in
           </button>
         </form>
 
         <div className="text-[12px] my-4 text-center  ">
-          Already have an Account{" "}
-          <Link href="/signin" className="italic font-semibold ">
-            Sign in Here
+          Don't have an Account{" "}
+          <Link href="/register" className="italic font-semibold ">
+            Sign up Here
           </Link>
         </div>
 

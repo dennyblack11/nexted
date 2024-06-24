@@ -7,10 +7,11 @@ const DisplayScreen = () => {
         <img
           width={1000}
           height={1000}
-          alt="img"
+          alt="image"
           src=""
           className="w-full h-[90%] object-cover"
         />
+        <p className="px-2 py-1 uppercase text-[12px]">name</p>
       </div>
     </div>
   );
